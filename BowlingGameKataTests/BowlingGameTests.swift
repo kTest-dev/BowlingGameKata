@@ -14,18 +14,16 @@ class BowlingGameTests: XCTestCase {
         let game =  BowlingGame()
             game.play(pins:1)
         XCTAssertTrue(game.allFrames().count == 1, "the game should have only one frame")
-        
     }
     func testNbFramesWhenTwoNormalRollsPlayed() {
         let game =  BowlingGame()
             game.play(pins:1)
             game.play(pins:4)
         XCTAssertTrue(game.allFrames().count == 1, "the game should have only one frame")
-        
     }
     func testNbFramesWhen20NormalRollsPlayed(){
         let game =  BowlingGame()
-        for _ in 0..<20 {
+        for _ in 1...20 {
             game.play(pins:2)
         }
         XCTAssertTrue(game.allFrames().count == 10, "the game should have only 10 frame")
