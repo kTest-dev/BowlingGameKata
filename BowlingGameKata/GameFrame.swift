@@ -10,5 +10,24 @@ import Foundation
 
 
 class GameFrame {
+    private var rolls:[GameRoll] = []
     
+    
+    func addRoll(roll:GameRoll) throws  {
+        guard !isCompleted() else {
+            throw GameFrameErrors.FrameCompleted
+        }
+        rolls.append(roll)
+    }
+    func numberOfPlayedRolls() -> Int{
+        return rolls.count
+    }
+    func isCompleted() -> Bool{
+        return rolls.count == 2
+    }
+}
+
+
+enum GameFrameErrors: Error {
+    case FrameCompleted
 }

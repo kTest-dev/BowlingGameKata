@@ -23,6 +23,9 @@
 		044CB9C9256D11F30076ADF9 /* GameFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9C7256D11F30076ADF9 /* GameFrame.swift */; };
 		044CB9CA256D11F30076ADF9 /* GameFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9C7256D11F30076ADF9 /* GameFrame.swift */; };
 		044CB9CC256D15D80076ADF9 /* GameFrameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CB256D15D80076ADF9 /* GameFrameTests.swift */; };
+		044CB9CE256D18ED0076ADF9 /* GameRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CD256D18ED0076ADF9 /* GameRoll.swift */; };
+		044CB9CF256D18ED0076ADF9 /* GameRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CD256D18ED0076ADF9 /* GameRoll.swift */; };
+		044CB9D0256D18ED0076ADF9 /* GameRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CD256D18ED0076ADF9 /* GameRoll.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,7 @@
 		044CB9C3256D0FCE0076ADF9 /* BowlingGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGame.swift; sourceTree = "<group>"; };
 		044CB9C7256D11F30076ADF9 /* GameFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFrame.swift; sourceTree = "<group>"; };
 		044CB9CB256D15D80076ADF9 /* GameFrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFrameTests.swift; sourceTree = "<group>"; };
+		044CB9CD256D18ED0076ADF9 /* GameRoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoll.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 				044CB99D256D0C9E0076ADF9 /* Info.plist */,
 				044CB9C3256D0FCE0076ADF9 /* BowlingGame.swift */,
 				044CB9C7256D11F30076ADF9 /* GameFrame.swift */,
+				044CB9CD256D18ED0076ADF9 /* GameRoll.swift */,
 			);
 			path = BowlingGameKata;
 			sourceTree = "<group>";
@@ -279,6 +284,7 @@
 				044CB9C4256D0FCE0076ADF9 /* BowlingGame.swift in Sources */,
 				044CB994256D0C9B0076ADF9 /* ViewController.swift in Sources */,
 				044CB990256D0C9B0076ADF9 /* AppDelegate.swift in Sources */,
+				044CB9CE256D18ED0076ADF9 /* GameRoll.swift in Sources */,
 				044CB992256D0C9B0076ADF9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +297,7 @@
 				044CB9C2256D0ED40076ADF9 /* BowlingGameTests.swift in Sources */,
 				044CB9C9256D11F30076ADF9 /* GameFrame.swift in Sources */,
 				044CB9A7256D0C9E0076ADF9 /* BowlingGameKataTests.swift in Sources */,
+				044CB9CF256D18ED0076ADF9 /* GameRoll.swift in Sources */,
 				044CB9C5256D0FCE0076ADF9 /* BowlingGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044CB9D0256D18ED0076ADF9 /* GameRoll.swift in Sources */,
 				044CB9C6256D0FCE0076ADF9 /* BowlingGame.swift in Sources */,
 				044CB9CA256D11F30076ADF9 /* GameFrame.swift in Sources */,
 				044CB9B2256D0C9E0076ADF9 /* BowlingGameKataUITests.swift in Sources */,

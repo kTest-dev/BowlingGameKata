@@ -13,10 +13,19 @@ class BowlingGame {
     
     func play(pins:Int) {
         
-        if let currentFrame = frames.last {
-            
+        if let currentFrame = frames.last, !currentFrame.isCompleted() {
+            do {
+                try currentFrame.addRoll(roll: GameRoll(knockedPins: pins))
+            } catch {
+                fatalError("A frame should have at most two rolls")
+            }
         }else{
             let frame = GameFrame()
+            do {
+                try frame.addRoll(roll: GameRoll(knockedPins: pins))
+            } catch {
+                fatalError("A frame should have at most two rolls")
+            }
             frames.append(frame)
         }
     }
