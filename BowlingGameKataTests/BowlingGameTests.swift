@@ -28,5 +28,12 @@ class BowlingGameTests: XCTestCase {
         }
         XCTAssertTrue(game.allFrames().count == 10, "the game should have only 10 frame")
     }
-
+    
+    func testNbFramesWhenAllRollsAreStrikes(){
+        let game =  BowlingGame()
+        for _ in 1...10 {
+          game.play(pins:10)
+        }
+        XCTAssertTrue(game.allFrames().count == 10, "the game should have only 10 frame")
+    }
 }

@@ -25,8 +25,6 @@ class BowlingGame {
         }catch {
             fatalError("A frame should have at most two rolls")
         }
-        
-        
     }
     
     

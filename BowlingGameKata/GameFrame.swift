@@ -29,9 +29,18 @@ class GameFrame {
     func hasStrike() -> Bool {
         return rolls.first?.isStrike() ?? false
     }
+    func hasSpare() -> Bool{
+        
+        if hasStrike() {
+            return false
+        }
+        
+        let result:Int = rolls.reduce(0) { (result, roll) -> Int in
+           return result + roll.getKnockedPins()
+        }
+        return result == 10
+    }
 }
-
-
 enum GameFrameErrors: Error {
     case FrameCompleted
 }
