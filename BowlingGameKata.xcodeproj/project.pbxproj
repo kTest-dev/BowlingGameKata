@@ -26,6 +26,7 @@
 		044CB9CE256D18ED0076ADF9 /* GameRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CD256D18ED0076ADF9 /* GameRoll.swift */; };
 		044CB9CF256D18ED0076ADF9 /* GameRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CD256D18ED0076ADF9 /* GameRoll.swift */; };
 		044CB9D0256D18ED0076ADF9 /* GameRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CD256D18ED0076ADF9 /* GameRoll.swift */; };
+		044CB9D2256D28840076ADF9 /* GameRollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9D1256D28840076ADF9 /* GameRollTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		044CB9C7256D11F30076ADF9 /* GameFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFrame.swift; sourceTree = "<group>"; };
 		044CB9CB256D15D80076ADF9 /* GameFrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFrameTests.swift; sourceTree = "<group>"; };
 		044CB9CD256D18ED0076ADF9 /* GameRoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoll.swift; sourceTree = "<group>"; };
+		044CB9D1256D28840076ADF9 /* GameRollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRollTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				044CB9A8256D0C9E0076ADF9 /* Info.plist */,
 				044CB9C1256D0ED40076ADF9 /* BowlingGameTests.swift */,
 				044CB9CB256D15D80076ADF9 /* GameFrameTests.swift */,
+				044CB9D1256D28840076ADF9 /* GameRollTests.swift */,
 			);
 			path = BowlingGameKataTests;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044CB9CC256D15D80076ADF9 /* GameFrameTests.swift in Sources */,
+				044CB9D2256D28840076ADF9 /* GameRollTests.swift in Sources */,
 				044CB9C2256D0ED40076ADF9 /* BowlingGameTests.swift in Sources */,
 				044CB9C9256D11F30076ADF9 /* GameFrame.swift in Sources */,
 				044CB9A7256D0C9E0076ADF9 /* BowlingGameKataTests.swift in Sources */,

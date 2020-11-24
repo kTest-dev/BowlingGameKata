@@ -15,4 +15,8 @@ class GameRoll {
     init(knockedPins:Int) {
         nbKnockedPins = knockedPins
     }
+    
+    func isStrike() -> Bool {
+        return nbKnockedPins == 10
+    }
 }

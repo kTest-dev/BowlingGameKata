@@ -23,7 +23,11 @@ class GameFrame {
         return rolls.count
     }
     func isCompleted() -> Bool{
-        return rolls.count == 2
+        return hasStrike() || (rolls.count == 2)
+    }
+    
+    func hasStrike() -> Bool {
+        return rolls.first?.isStrike() ?? false
     }
 }
 
