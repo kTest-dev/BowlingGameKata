@@ -36,4 +36,22 @@ class BowlingGameTests: XCTestCase {
         }
         XCTAssertTrue(game.allFrames().count == 10, "the game should have only 10 frame")
     }
+    
+    func testGetScoreWhenNoPinKnockedInAllRolls(){
+        let game = BowlingGame()
+        for _ in 1...20 {
+            game.play(pins:0)
+        }
+        XCTAssertEqual(game.getScore(), 0, "When No pin is knocked the score should be 0")
+    }
+    
+    func testGetScoreWhen20NormalRollsPlayed(){
+        let game = BowlingGame()
+        for _ in 1...20 {
+            game.play(pins:2)
+        }
+        print(game.getScore())
+        XCTAssertEqual(game.getScore(), 40, "When for each roll only 2 pins are knocked the score should be 40")
+    }
+    
 }
