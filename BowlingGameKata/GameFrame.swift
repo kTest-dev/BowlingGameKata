@@ -34,17 +34,14 @@ class GameFrame {
         if hasStrike() {
             return false
         }
-        
-        let result:Int = rolls.reduce(0) { (result, roll) -> Int in
-           return result + roll.getKnockedPins()
-        }
-        return result == 10
+        return getFrameScore() == 10
     }
     
     func getFrameScore() -> Int {
         return rolls.reduce(0) { (result, roll) -> Int in
                  return result + roll.getKnockedPins()
-              }
+            
+        }
     }
 }
 enum GameFrameErrors: Error {
