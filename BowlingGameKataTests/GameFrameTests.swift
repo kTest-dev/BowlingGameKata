@@ -78,5 +78,18 @@ class GameFrameTests: XCTestCase {
         
         XCTAssertFalse(frame.hasSpare(), "When the some of pins are knocked. the frame shouldn't have a spare ")
     }
+    
+    func testGameFrameScoreZero(){
+        let frame = GameFrame()
+        try? frame.addRoll(roll: GameRoll(knockedPins: 0))
+        try? frame.addRoll(roll: GameRoll(knockedPins: 0))
+        XCTAssertEqual(frame.getFrameScore(),0,"When no pins are knocked the frame score should be zero")
+    }
+    func testGameFrameScoreWhenSpare(){
+         let frame = GameFrame()
+         try? frame.addRoll(roll: GameRoll(knockedPins: 2))
+         try? frame.addRoll(roll: GameRoll(knockedPins: 8))
+         XCTAssertEqual(frame.getFrameScore(),10,"When the frame has a spare the score should be ten")
+     }
 }
 

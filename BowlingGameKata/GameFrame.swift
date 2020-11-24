@@ -40,6 +40,12 @@ class GameFrame {
         }
         return result == 10
     }
+    
+    func getFrameScore() -> Int {
+        return rolls.reduce(0) { (result, roll) -> Int in
+                 return result + roll.getKnockedPins()
+              }
+    }
 }
 enum GameFrameErrors: Error {
     case FrameCompleted
