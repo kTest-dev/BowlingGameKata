@@ -50,7 +50,6 @@ class BowlingGameTests: XCTestCase {
         for _ in 1...20 {
             game.play(pins:2)
         }
-        print(game.getScore())
         XCTAssertEqual(game.getScore(), 40, "When for each roll only 2 pins are knocked the score should be 40")
     }
     

@@ -28,12 +28,17 @@ class BowlingGame {
         }
     }
     
-    
     func allFrames() -> [GameFrame] {
         return frames
     }
     
-    func getScore() -> Int {
-        return frames.reduce(0) {$0 + $1.getFrameScore()}
+   func getScore() -> Int {
+        var score = 0
+        for (_,frame) in  frames.enumerated(){
+            score += frame.getFrameScore() + frame.getFrameBonus(allFrames: frames)
+        }
+        return score
     }
 }
+
+

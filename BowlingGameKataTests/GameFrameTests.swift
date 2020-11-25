@@ -91,5 +91,52 @@ class GameFrameTests: XCTestCase {
          try? frame.addRoll(roll: GameRoll(knockedPins: 8))
          XCTAssertEqual(frame.getFrameScore(),10,"When the frame has a spare the score should be ten")
      }
+    
+    func testNormalGameFrameBonus(){
+        
+         let frame = GameFrame()
+         try? frame.addRoll(roll: GameRoll(knockedPins: 2))
+         try? frame.addRoll(roll: GameRoll(knockedPins: 2))
+        
+         let nextFrame = GameFrame()
+         try? nextFrame.addRoll(roll: GameRoll(knockedPins: 2))
+         try? nextFrame.addRoll(roll: GameRoll(knockedPins: 2))
+        
+         XCTAssertEqual(frame.getFrameBonus(allFrames: [frame,nextFrame]),0,"When the some of pins are knocked, the bonus should be 0 ")
+    }
+    func testSpareGameFrameBonus(){
+           
+            let frame = GameFrame()
+            try? frame.addRoll(roll: GameRoll(knockedPins: 2))
+            try? frame.addRoll(roll: GameRoll(knockedPins: 8))
+           
+            let nextFrame = GameFrame()
+            try? nextFrame.addRoll(roll: GameRoll(knockedPins: 2))
+            try? nextFrame.addRoll(roll: GameRoll(knockedPins: 3))
+           
+            XCTAssertEqual(frame.getFrameBonus(allFrames:  [frame,nextFrame]),2,"When all the pins are knocked by spare, the bonus should be 2 which is the nextframe first role score ")
+       }
+    func testStrikeGameFrameBonus(){
+               let frame = GameFrame()
+               try? frame.addRoll(roll: GameRoll(knockedPins: 10))
+              
+               let nextFrameOne = GameFrame()
+               try? nextFrameOne.addRoll(roll: GameRoll(knockedPins: 2))
+               try? nextFrameOne.addRoll(roll: GameRoll(knockedPins: 3))
+                    
+               XCTAssertEqual(frame.getFrameBonus(allFrames:  [frame,nextFrameOne]),5,"When all the pins are knocked by strike, the bonus should be 5 which is the nextframe score ")
+    }
+    func testTwoStrikesInARowGameFrameBonus(){
+               let frame = GameFrame()
+               try? frame.addRoll(roll: GameRoll(knockedPins: 10))
+              
+               let nextFrameOne = GameFrame()
+               try? nextFrameOne.addRoll(roll: GameRoll(knockedPins: 10))
+               let nextFrameTwo = GameFrame()
+                 try? nextFrameTwo.addRoll(roll: GameRoll(knockedPins: 2))
+                    try? nextFrameTwo.addRoll(roll: GameRoll(knockedPins: 3))
+                    
+        XCTAssertEqual(frame.getFrameBonus(allFrames:  [frame,nextFrameOne,nextFrameTwo]),15,"When all the pins are knocked by two strike in arwo, the bonus should be 2 which is the nextframe first role score ")
+    }
 }
 

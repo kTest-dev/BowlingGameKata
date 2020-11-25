@@ -11,24 +11,22 @@ import XCTest
 
 class BowlingGameKataTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testAllRollsAreStriksScore() {
+        let rolls = [10,10,10,10,10,10,10,10,10,10,10,10]
+        
+        let game = BowlingGame()
+        for roll in rolls {
+            game.play(pins: roll)
         }
+        XCTAssertEqual(game.getScore(), 300, "When all rolls are rolls we expect to have score of 300")
     }
-
+    func testAllFramesAreSparesScore() {
+        let rolls = [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
+        
+        let game = BowlingGame()
+        for roll in rolls {
+            game.play(pins: roll)
+        }
+        XCTAssertEqual(game.getScore(), 150, "When all rolls are knocks 5 pins we expect to have score of 150")
+    }
 }
