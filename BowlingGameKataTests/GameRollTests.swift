@@ -14,6 +14,6 @@ class GameRollTests: XCTestCase {
         XCTAssertTrue(GameRoll(knockedPins:10).isStrike(), "When all pins are knocked in a game roll. the roll should be a strike")
     }
     func testGameRollIsNotStrike(){
-          XCTAssertFalse(GameRoll(knockedPins:1).isStrike(), "When few pins are knocked in a game roll. the roll should not be a strike")
-      }
+        XCTAssertFalse(GameRoll(knockedPins:1).isStrike(), "When few pins are knocked in a game roll. the roll should not be a strike")
+    }
 }

@@ -79,6 +79,18 @@ class GameFrame {
         }
         return 0
     }
+    
+    func getNeededScore() -> Int {
+        if hasStrike() {
+            return 0
+        }
+        if !isCompleted() {
+            if let firstRoll = getFirstRoll() {
+                return 10 - firstRoll.getKnockedPins()
+            }
+        }
+        return 10
+    }
 }
 enum GameFrameErrors: Error {
     case FrameCompleted

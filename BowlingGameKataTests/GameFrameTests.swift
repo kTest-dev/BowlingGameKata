@@ -132,11 +132,29 @@ class GameFrameTests: XCTestCase {
               
                let nextFrameOne = GameFrame()
                try? nextFrameOne.addRoll(roll: GameRoll(knockedPins: 10))
+        
                let nextFrameTwo = GameFrame()
-                 try? nextFrameTwo.addRoll(roll: GameRoll(knockedPins: 2))
-                    try? nextFrameTwo.addRoll(roll: GameRoll(knockedPins: 3))
+               try? nextFrameTwo.addRoll(roll: GameRoll(knockedPins: 2))
+               try? nextFrameTwo.addRoll(roll: GameRoll(knockedPins: 3))
                     
         XCTAssertEqual(frame.getFrameBonus(allFrames:  [frame,nextFrameOne,nextFrameTwo]),15,"When all the pins are knocked by two strike in arwo, the bonus should be 2 which is the nextframe first role score ")
+    }
+    
+    func testGetNeededScoreWhenNoRollPlayed(){
+        let frame = GameFrame()
+        
+        XCTAssertEqual(frame.getNeededScore(),10,"When No roll is played a score of 10 is needed")
+    }
+    func testGetNeededScoreWhenStrike(){
+           let frame = GameFrame()
+           try? frame.addRoll(roll: GameRoll(knockedPins: 10))
+           XCTAssertEqual(frame.getNeededScore(),0,"When a strike is in a roll  a score of 0 is needed")
+    }
+    func yestGetNeedScoreForASpare(){
+        let frame = GameFrame()
+        try? frame.addRoll(roll: GameRoll(knockedPins: 2))
+
+        XCTAssertEqual(frame.getNeededScore(),8,"When the first roll has a score of 2 a score of 8 is needed to have a spare")
     }
 }
 
