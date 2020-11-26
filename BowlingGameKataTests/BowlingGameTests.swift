@@ -52,5 +52,37 @@ class BowlingGameTests: XCTestCase {
         }
         XCTAssertEqual(game.getScore(), 40, "When for each roll only 2 pins are knocked the score should be 40")
     }
-    
+    func testGameFinishedWhen20NormalRollsPlayed(){
+        let game = BowlingGame()
+        for _ in 1...20 {
+            game.play(pins:2)
+        }
+        XCTAssertTrue(game.isFinished(),"When normal 20 rolls are played the game should be finished")
+    }
+    func testGameFinishedWhenLastRollsIsAStrike(){
+        let game = BowlingGame()
+        for _ in 1...18 {
+            game.play(pins:2)
+        }
+         game.play(pins:10)
+        XCTAssertTrue(!game.isFinished(),"When last roll is a strike the player should have a bonus frame")
+    }
+    func testGameFinishedWhenLastRollsIsAStrikeAndBonusIsStrike(){
+        let game = BowlingGame()
+        for _ in 1...18 {
+            game.play(pins:2)
+        }
+         game.play(pins:10)
+         game.play(pins:10)
+        XCTAssertTrue(game.isFinished(),"When last roll is a strike the player and the bonus frame is also a strike the game should be finished")
+    }
+    func testGameFinishedWhenLastRollsIsAStrikeAndBonus(){
+        let game = BowlingGame()
+        for _ in 1...18 {
+            game.play(pins:2)
+        }
+         game.play(pins:10)
+         game.play(pins:5)
+        XCTAssertTrue(game.isFinished(),"When last roll is a strike the player and the bonus frame is also a strike the game should be finished")
+    }
 }

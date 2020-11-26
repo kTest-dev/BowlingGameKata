@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0412282F256FC82E007D8129 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0412282E256FC82E007D8129 /* Localizable.strings */; };
 		044CB990256D0C9B0076ADF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB98F256D0C9B0076ADF9 /* AppDelegate.swift */; };
 		044CB992256D0C9B0076ADF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB991256D0C9B0076ADF9 /* SceneDelegate.swift */; };
 		044CB994256D0C9B0076ADF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB993256D0C9B0076ADF9 /* ViewController.swift */; };
@@ -27,6 +28,12 @@
 		044CB9CF256D18ED0076ADF9 /* GameRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CD256D18ED0076ADF9 /* GameRoll.swift */; };
 		044CB9D0256D18ED0076ADF9 /* GameRoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9CD256D18ED0076ADF9 /* GameRoll.swift */; };
 		044CB9D2256D28840076ADF9 /* GameRollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9D1256D28840076ADF9 /* GameRollTests.swift */; };
+		044CB9D5256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9D3256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift */; };
+		044CB9D6256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9D3256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift */; };
+		044CB9D7256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CB9D3256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift */; };
+		044CB9D8256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */; };
+		044CB9D9256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */; };
+		044CB9DA256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0412282E256FC82E007D8129 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		044CB98C256D0C9B0076ADF9 /* BowlingGameKata.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BowlingGameKata.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044CB98F256D0C9B0076ADF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		044CB991256D0C9B0076ADF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +75,8 @@
 		044CB9CB256D15D80076ADF9 /* GameFrameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFrameTests.swift; sourceTree = "<group>"; };
 		044CB9CD256D18ED0076ADF9 /* GameRoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRoll.swift; sourceTree = "<group>"; };
 		044CB9D1256D28840076ADF9 /* GameRollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRollTests.swift; sourceTree = "<group>"; };
+		044CB9D3256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFrameCollectionViewCell.swift; sourceTree = "<group>"; };
+		044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameFrameCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +104,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04122830256FF72B007D8129 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				044CB9D3256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift */,
+				044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		04122831256FF73A007D8129 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				044CB993256D0C9B0076ADF9 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		04122832256FF758007D8129 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				044CB9C3256D0FCE0076ADF9 /* BowlingGame.swift */,
+				044CB9C7256D11F30076ADF9 /* GameFrame.swift */,
+				044CB9CD256D18ED0076ADF9 /* GameRoll.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		04122833256FF769007D8129 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				044CB995256D0C9B0076ADF9 /* Main.storyboard */,
+				04122830256FF72B007D8129 /* Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		044CB983256D0C9B0076ADF9 = {
 			isa = PBXGroup;
 			children = (
@@ -117,16 +163,15 @@
 		044CB98E256D0C9B0076ADF9 /* BowlingGameKata */ = {
 			isa = PBXGroup;
 			children = (
+				04122833256FF769007D8129 /* Views */,
+				04122832256FF758007D8129 /* Models */,
+				04122831256FF73A007D8129 /* ViewControllers */,
 				044CB98F256D0C9B0076ADF9 /* AppDelegate.swift */,
 				044CB991256D0C9B0076ADF9 /* SceneDelegate.swift */,
-				044CB993256D0C9B0076ADF9 /* ViewController.swift */,
-				044CB995256D0C9B0076ADF9 /* Main.storyboard */,
 				044CB998256D0C9E0076ADF9 /* Assets.xcassets */,
 				044CB99A256D0C9E0076ADF9 /* LaunchScreen.storyboard */,
 				044CB99D256D0C9E0076ADF9 /* Info.plist */,
-				044CB9C3256D0FCE0076ADF9 /* BowlingGame.swift */,
-				044CB9C7256D11F30076ADF9 /* GameFrame.swift */,
-				044CB9CD256D18ED0076ADF9 /* GameRoll.swift */,
+				0412282E256FC82E007D8129 /* Localizable.strings */,
 			);
 			path = BowlingGameKata;
 			sourceTree = "<group>";
@@ -256,6 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0412282F256FC82E007D8129 /* Localizable.strings in Resources */,
+				044CB9D8256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */,
 				044CB99C256D0C9E0076ADF9 /* LaunchScreen.storyboard in Resources */,
 				044CB999256D0C9E0076ADF9 /* Assets.xcassets in Resources */,
 				044CB997256D0C9B0076ADF9 /* Main.storyboard in Resources */,
@@ -266,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044CB9D9256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044CB9DA256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +335,7 @@
 				044CB9C8256D11F30076ADF9 /* GameFrame.swift in Sources */,
 				044CB9C4256D0FCE0076ADF9 /* BowlingGame.swift in Sources */,
 				044CB994256D0C9B0076ADF9 /* ViewController.swift in Sources */,
+				044CB9D5256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift in Sources */,
 				044CB990256D0C9B0076ADF9 /* AppDelegate.swift in Sources */,
 				044CB9CE256D18ED0076ADF9 /* GameRoll.swift in Sources */,
 				044CB992256D0C9B0076ADF9 /* SceneDelegate.swift in Sources */,
@@ -296,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044CB9D6256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift in Sources */,
 				044CB9CC256D15D80076ADF9 /* GameFrameTests.swift in Sources */,
 				044CB9D2256D28840076ADF9 /* GameRollTests.swift in Sources */,
 				044CB9C2256D0ED40076ADF9 /* BowlingGameTests.swift in Sources */,
@@ -310,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				044CB9D7256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift in Sources */,
 				044CB9D0256D18ED0076ADF9 /* GameRoll.swift in Sources */,
 				044CB9C6256D0FCE0076ADF9 /* BowlingGame.swift in Sources */,
 				044CB9CA256D11F30076ADF9 /* GameFrame.swift in Sources */,

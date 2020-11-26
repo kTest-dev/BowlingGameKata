@@ -31,7 +31,6 @@ class GameFrame {
         return rolls.first?.isStrike() ?? false
     }
     func hasSpare() -> Bool{
-        
         if hasStrike() {
             return false
         }
@@ -45,10 +44,15 @@ class GameFrame {
         }
     }
     
-    private func getFirstRoll() -> GameRoll?{
+    func getFirstRoll() -> GameRoll?{
         return rolls.first
     }
-    
+    func getSecondRoll() -> GameRoll?{
+        if rolls.count == 2{
+            return rolls[1]
+        }
+        return nil
+    }
     func getFrameBonus(allFrames:[GameFrame]) -> Int {
             if hasStrike() {
                 return strikeBonus(allFrames: allFrames)

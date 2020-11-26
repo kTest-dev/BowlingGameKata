@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BowlingGameKata" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj5-f0-LlV">
+                                <rect key="frame" x="32" y="494" width="256" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="EuK-Hx-07o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Uf-Rk-WKl"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gnO-cF-oeE">
+                                <rect key="frame" x="0.0" y="326" width="320" height="120"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="ofL-0u-Qah"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="huD-5I-ZaF">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You need a 5 get a spare 🤞" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceU-gE-Ge9">
+                                <rect key="frame" x="51.5" y="273.5" width="217" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZIu-8z-pkw">
+                                <rect key="frame" x="144.5" y="150" width="31" height="63.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ceU-gE-Ge9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="A36-SQ-0Cj"/>
+                            <constraint firstItem="ceU-gE-Ge9" firstAttribute="top" relation="lessThanOrEqual" secondItem="ZIu-8z-pkw" secondAttribute="bottom" constant="172.5" id="CSd-PL-lF8"/>
+                            <constraint firstItem="ZIu-8z-pkw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="P9B-1E-28i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gnO-cF-oeE" secondAttribute="trailing" id="QXI-XV-P0o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jj5-f0-LlV" secondAttribute="bottom" constant="24" id="QhG-GQ-WhW"/>
+                            <constraint firstItem="ceU-gE-Ge9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xbj-DU-SgE"/>
+                            <constraint firstItem="gnO-cF-oeE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bki-0h-ees"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jj5-f0-LlV" secondAttribute="trailing" constant="32" id="iGB-DW-ieQ"/>
+                            <constraint firstItem="jj5-f0-LlV" firstAttribute="top" secondItem="gnO-cF-oeE" secondAttribute="bottom" constant="48" id="nlW-QE-fj6"/>
+                            <constraint firstItem="ZIu-8z-pkw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rP6-GZ-CJI"/>
+                            <constraint firstItem="jj5-f0-LlV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="rTb-KI-iBB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="feedbackLabel" destination="ceU-gE-Ge9" id="vkY-Ja-KT0"/>
+                        <outlet property="framesCollectionView" destination="gnO-cF-oeE" id="VDF-yE-n2w"/>
+                        <outlet property="gameButton" destination="jj5-f0-LlV" id="UTS-2b-W4S"/>
+                        <outlet property="rollScoreLabel" destination="ZIu-8z-pkw" id="eI9-MU-toH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="87"/>
+        </scene>
+    </scenes>
+</document>

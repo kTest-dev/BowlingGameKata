@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  BowlingGameKata
+
+  Created by Macbook Pro 2017 on 11/26/20.
+  Copyright © 2020 DevTest. All rights reserved.
+*/
+"start_game_feedback_message" = "Let's start the game 🎳";
+"strike_feedback_message" = "Awesome 🎉 You got a strike";
+"zero_feedback_message" = "Opps 😒 Better luck next roll";
+"next_roll_feedback_message" = "You need a %d to get a spare 🤞";
+"spare_feedback_message" = "Great Job 🤩 You got a spare";
+"next_frame_feedback_message" = "Okay, let's rock it next roll 🎸";
+"start_new_game_btn" = "Start New Game";
+"roll_btn" = "New Roll";
+"calculate_score_btn" = "Calculate Score";
+"new_game_btn_alert" =  "New Game";
+"cance_btn_alert" = "Cancel" ;
+"alert_title" = "Your Score";
+"alert_message" = "You have scored during this session %d points";
