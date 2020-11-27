@@ -11,14 +11,14 @@ import XCTest
 
 class BowlingGameKataTests: XCTestCase {
 
-    func testAllRollsAreStriksScore() {
+    func testAllRollsAreStrikesScore() {
         let rolls = [10,10,10,10,10,10,10,10,10,10,10,10]
         
         let game = BowlingGame()
         for roll in rolls {
             game.play(pins: roll)
         }
-        XCTAssertEqual(game.getScore(), 300, "When all rolls are rolls we expect to have score of 300")
+        XCTAssertEqual(game.getScore(), 300, "When all rolls are Strikes we expect to have a score of 300")
     }
     func testAllFramesAreSparesScore() {
         let rolls = [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
@@ -27,6 +27,6 @@ class BowlingGameKataTests: XCTestCase {
         for roll in rolls {
             game.play(pins: roll)
         }
-        XCTAssertEqual(game.getScore(), 150, "When all rolls are knocks 5 pins we expect to have score of 150")
+        XCTAssertEqual(game.getScore(), 150, "When each roll knocks 5 pins we expect to have a score of 150")
     }
 }
