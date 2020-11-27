@@ -2,7 +2,7 @@
 
 **How to run it ?**
 
-1. Clone the project
+1. Clone the project branch develop
 2. Open the folder with XCode 
 3. Choose the BowlingGameKata scheme 
 4. Run the scheme by clicking on play 
