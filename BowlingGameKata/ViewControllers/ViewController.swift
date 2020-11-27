@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Lottie
 class ViewController: UIViewController{
     
     @IBOutlet weak var feedbackLabel: UILabel!
@@ -16,15 +16,26 @@ class ViewController: UIViewController{
     @IBOutlet weak var framesCollectionView: UICollectionView!
     
     var currentGame:BowlingGame?
+
+    let animationView = AnimationView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let animation = Animation.named("confetti", subdirectory: "Resources")
+        setAnimationView()
+        
         setupViews()
         registerCells()
         setFeedbackMessage()
         setGameButton()
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animationView.play()
+    }
     @IBAction func playBtnClicked(_ sender: Any) {
         if currentGame == nil {
             createNewGame()
@@ -35,6 +46,33 @@ class ViewController: UIViewController{
         }
     }
     
+    
+    fileprivate func setAnimationView() {
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        animationView.alpha = 1
+        animationView.contentMode = .scaleToFill
+        animationView.loopMode = .playOnce
+        animationView.animationSpeed = 1
+        
+        view.addSubview(animationView)
+        animationView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0
+        ).isActive = true
+        animationView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+        animationView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
+        view.sendSubviewToBack(animationView)
+    }
+    
+    fileprivate func playAnimationWithName(name:String) {
+        let animation = Animation.named(name)
+        animationView.isHidden = false
+        animationView.animation = animation
+        animationView.play { (comleted) in
+            self.animationView.isHidden = true
+        }
+    }
     private func createNewGame() {
         currentGame = BowlingGame()
         playNewRoll()
@@ -87,25 +125,31 @@ class ViewController: UIViewController{
         if let currentFrame = currentGame?.allFrames().last {
             if  currentFrame.hasStrike() {
                 feedbackLabel.text = "strike_feedback_message".localize()
+                playAnimationWithName(name: "confetti")
                 return
             }
             if  currentFrame.hasSpare() {
                 feedbackLabel.text = "spare_feedback_message".localize()
+                playAnimationWithName(name: "spare")
                 return
             }
             if !currentFrame.isCompleted(){
                 let neededScore = currentFrame.getNeededScore()
                 if neededScore == 10  {
                     feedbackLabel.text = "zero_feedback_message".localize()
+                    playAnimationWithName(name: "sad")
                 }else{
                     feedbackLabel.text = String(format:"next_roll_feedback_message".localize(),neededScore)
+                    playAnimationWithName(name: "next")
                 }
                 return
             }else {
                 if currentFrame.getSecondRoll()?.getKnockedPins() == 0{
                     feedbackLabel.text = "zero_feedback_message".localize()
+                    playAnimationWithName(name: "sad")
                 }else{
                     feedbackLabel.text = "next_frame_feedback_message".localize()
+                    playAnimationWithName(name: "next")
                 }
             }
         }

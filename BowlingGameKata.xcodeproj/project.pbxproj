@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,6 +34,13 @@
 		044CB9D8256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */; };
 		044CB9D9256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */; };
 		044CB9DA256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */; };
+		045DB33425700E07006DB41D /* sad.json in Resources */ = {isa = PBXBuildFile; fileRef = 045DB33325700E07006DB41D /* sad.json */; };
+		04928BF82570077900C734D1 /* next.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BF72570077800C734D1 /* next.json */; };
+		04928BFA2570078100C734D1 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BF92570078100C734D1 /* confetti.json */; };
+		04928BFC25700B8700C734D1 /* spare.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BFB25700B8700C734D1 /* spare.json */; };
+		17207ED64907C5182ABCFF51 /* Pods_BowlingGameKata_BowlingGameKataUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF0C64CCF8F5261D5DCB3AC /* Pods_BowlingGameKata_BowlingGameKataUITests.framework */; };
+		3F61DDF9F4FFFF987BAE6BAD /* Pods_BowlingGameKata.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC5D177A967FCE8BDAD1153 /* Pods_BowlingGameKata.framework */; };
+		46D27E5235B33475A6F29735 /* Pods_BowlingGameKataTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A2FDD55D43AA8E2027B475F /* Pods_BowlingGameKataTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +84,19 @@
 		044CB9D1256D28840076ADF9 /* GameRollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRollTests.swift; sourceTree = "<group>"; };
 		044CB9D3256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFrameCollectionViewCell.swift; sourceTree = "<group>"; };
 		044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameFrameCollectionViewCell.xib; sourceTree = "<group>"; };
+		045DB33325700E07006DB41D /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
+		04928BF72570077800C734D1 /* next.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = next.json; sourceTree = "<group>"; };
+		04928BF92570078100C734D1 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
+		04928BFB25700B8700C734D1 /* spare.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spare.json; sourceTree = "<group>"; };
+		0A2FDD55D43AA8E2027B475F /* Pods_BowlingGameKataTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BowlingGameKataTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		150FC3CCCBC842849EA62BCA /* Pods-BowlingGameKata-BowlingGameKataUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowlingGameKata-BowlingGameKataUITests.debug.xcconfig"; path = "Target Support Files/Pods-BowlingGameKata-BowlingGameKataUITests/Pods-BowlingGameKata-BowlingGameKataUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F030B47171405327D323822 /* Pods-BowlingGameKata-BowlingGameKataUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowlingGameKata-BowlingGameKataUITests.release.xcconfig"; path = "Target Support Files/Pods-BowlingGameKata-BowlingGameKataUITests/Pods-BowlingGameKata-BowlingGameKataUITests.release.xcconfig"; sourceTree = "<group>"; };
+		50AEC372E702D45790308175 /* Pods-BowlingGameKataTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowlingGameKataTests.release.xcconfig"; path = "Target Support Files/Pods-BowlingGameKataTests/Pods-BowlingGameKataTests.release.xcconfig"; sourceTree = "<group>"; };
+		5990EE2CFCD39833DBCFBB31 /* Pods-BowlingGameKata.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowlingGameKata.release.xcconfig"; path = "Target Support Files/Pods-BowlingGameKata/Pods-BowlingGameKata.release.xcconfig"; sourceTree = "<group>"; };
+		876B967BC719AC72E55B999E /* Pods-BowlingGameKataTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowlingGameKataTests.debug.xcconfig"; path = "Target Support Files/Pods-BowlingGameKataTests/Pods-BowlingGameKataTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3342C2537BDF379D09B084A /* Pods-BowlingGameKata.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BowlingGameKata.debug.xcconfig"; path = "Target Support Files/Pods-BowlingGameKata/Pods-BowlingGameKata.debug.xcconfig"; sourceTree = "<group>"; };
+		CFF0C64CCF8F5261D5DCB3AC /* Pods_BowlingGameKata_BowlingGameKataUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BowlingGameKata_BowlingGameKataUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC5D177A967FCE8BDAD1153 /* Pods_BowlingGameKata.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BowlingGameKata.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F61DDF9F4FFFF987BAE6BAD /* Pods_BowlingGameKata.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46D27E5235B33475A6F29735 /* Pods_BowlingGameKataTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17207ED64907C5182ABCFF51 /* Pods_BowlingGameKata_BowlingGameKataUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +170,8 @@
 				044CB9A5256D0C9E0076ADF9 /* BowlingGameKataTests */,
 				044CB9B0256D0C9E0076ADF9 /* BowlingGameKataUITests */,
 				044CB98D256D0C9B0076ADF9 /* Products */,
+				055D75B79A60522C0F3FDD7A /* Pods */,
+				9973A5BA487FB0A6B0644ADA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +188,7 @@
 		044CB98E256D0C9B0076ADF9 /* BowlingGameKata */ = {
 			isa = PBXGroup;
 			children = (
+				04928BF62570076A00C734D1 /* Resources */,
 				04122833256FF769007D8129 /* Views */,
 				04122832256FF758007D8129 /* Models */,
 				04122831256FF73A007D8129 /* ViewControllers */,
@@ -197,6 +223,40 @@
 			path = BowlingGameKataUITests;
 			sourceTree = "<group>";
 		};
+		04928BF62570076A00C734D1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04928BF92570078100C734D1 /* confetti.json */,
+				045DB33325700E07006DB41D /* sad.json */,
+				04928BFB25700B8700C734D1 /* spare.json */,
+				04928BF72570077800C734D1 /* next.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		055D75B79A60522C0F3FDD7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A3342C2537BDF379D09B084A /* Pods-BowlingGameKata.debug.xcconfig */,
+				5990EE2CFCD39833DBCFBB31 /* Pods-BowlingGameKata.release.xcconfig */,
+				150FC3CCCBC842849EA62BCA /* Pods-BowlingGameKata-BowlingGameKataUITests.debug.xcconfig */,
+				4F030B47171405327D323822 /* Pods-BowlingGameKata-BowlingGameKataUITests.release.xcconfig */,
+				876B967BC719AC72E55B999E /* Pods-BowlingGameKataTests.debug.xcconfig */,
+				50AEC372E702D45790308175 /* Pods-BowlingGameKataTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9973A5BA487FB0A6B0644ADA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEC5D177A967FCE8BDAD1153 /* Pods_BowlingGameKata.framework */,
+				CFF0C64CCF8F5261D5DCB3AC /* Pods_BowlingGameKata_BowlingGameKataUITests.framework */,
+				0A2FDD55D43AA8E2027B475F /* Pods_BowlingGameKataTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,9 +264,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 044CB9B6256D0C9E0076ADF9 /* Build configuration list for PBXNativeTarget "BowlingGameKata" */;
 			buildPhases = (
+				A78D63C3598203406D328298 /* [CP] Check Pods Manifest.lock */,
 				044CB988256D0C9B0076ADF9 /* Sources */,
 				044CB989256D0C9B0076ADF9 /* Frameworks */,
 				044CB98A256D0C9B0076ADF9 /* Resources */,
+				5127E4E53D0E29F703CAF44D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,6 +283,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 044CB9B9256D0C9E0076ADF9 /* Build configuration list for PBXNativeTarget "BowlingGameKataTests" */;
 			buildPhases = (
+				914F5DAB07FBFBC6DB0122EA /* [CP] Check Pods Manifest.lock */,
 				044CB99E256D0C9E0076ADF9 /* Sources */,
 				044CB99F256D0C9E0076ADF9 /* Frameworks */,
 				044CB9A0256D0C9E0076ADF9 /* Resources */,
@@ -239,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 044CB9BC256D0C9E0076ADF9 /* Build configuration list for PBXNativeTarget "BowlingGameKataUITests" */;
 			buildPhases = (
+				00D38142EBB754906C6B9B05 /* [CP] Check Pods Manifest.lock */,
 				044CB9A9256D0C9E0076ADF9 /* Sources */,
 				044CB9AA256D0C9E0076ADF9 /* Frameworks */,
 				044CB9AB256D0C9E0076ADF9 /* Resources */,
+				442D6727A62FAD355975C4C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,9 +366,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045DB33425700E07006DB41D /* sad.json in Resources */,
+				04928BF82570077900C734D1 /* next.json in Resources */,
 				0412282F256FC82E007D8129 /* Localizable.strings in Resources */,
 				044CB9D8256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */,
+				04928BFA2570078100C734D1 /* confetti.json in Resources */,
 				044CB99C256D0C9E0076ADF9 /* LaunchScreen.storyboard in Resources */,
+				04928BFC25700B8700C734D1 /* spare.json in Resources */,
 				044CB999256D0C9E0076ADF9 /* Assets.xcassets in Resources */,
 				044CB997256D0C9B0076ADF9 /* Main.storyboard in Resources */,
 			);
@@ -326,6 +395,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00D38142EBB754906C6B9B05 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BowlingGameKata-BowlingGameKataUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		442D6727A62FAD355975C4C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BowlingGameKata-BowlingGameKataUITests/Pods-BowlingGameKata-BowlingGameKataUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BowlingGameKata-BowlingGameKataUITests/Pods-BowlingGameKata-BowlingGameKataUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BowlingGameKata-BowlingGameKataUITests/Pods-BowlingGameKata-BowlingGameKataUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5127E4E53D0E29F703CAF44D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BowlingGameKata/Pods-BowlingGameKata-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BowlingGameKata/Pods-BowlingGameKata-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BowlingGameKata/Pods-BowlingGameKata-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		914F5DAB07FBFBC6DB0122EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BowlingGameKataTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A78D63C3598203406D328298 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BowlingGameKata-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		044CB988256D0C9B0076ADF9 /* Sources */ = {
@@ -520,6 +692,7 @@
 		};
 		044CB9B7256D0C9E0076ADF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3342C2537BDF379D09B084A /* Pods-BowlingGameKata.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -537,6 +710,7 @@
 		};
 		044CB9B8256D0C9E0076ADF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5990EE2CFCD39833DBCFBB31 /* Pods-BowlingGameKata.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -554,6 +728,7 @@
 		};
 		044CB9BA256D0C9E0076ADF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 876B967BC719AC72E55B999E /* Pods-BowlingGameKataTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -575,6 +750,7 @@
 		};
 		044CB9BB256D0C9E0076ADF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50AEC372E702D45790308175 /* Pods-BowlingGameKataTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -596,6 +772,7 @@
 		};
 		044CB9BD256D0C9E0076ADF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 150FC3CCCBC842849EA62BCA /* Pods-BowlingGameKata-BowlingGameKataUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -615,6 +792,7 @@
 		};
 		044CB9BE256D0C9E0076ADF9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F030B47171405327D323822 /* Pods-BowlingGameKata-BowlingGameKataUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,6 @@
+framework module Pods_BowlingGameKataTests {
+  umbrella header "Pods-BowlingGameKataTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
