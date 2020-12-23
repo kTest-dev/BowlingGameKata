@@ -14,44 +14,54 @@ class ViewController: UIViewController{
     @IBOutlet weak var gameButton: UIButton!
     @IBOutlet weak var rollScoreLabel: UILabel!
     @IBOutlet weak var framesCollectionView: UICollectionView!
-    
-    var currentGame:BowlingGame?
-    var gamestate: GameState {
-        get{
-            if currentGame == nil {
-                return .newGame
-            }
-            return currentGame!.isFinished() ? .finished : .inProgress
-        }
-    }
 
+    
     let animationView = AnimationView()
+    
+    var viewModel:BowlingGameViewModel? = BowlingGameViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let animation = Animation.named("confetti", subdirectory: "Resources")
-        setAnimationView()
         
+        setAnimationView()
         setupViews()
         registerCells()
-        setFeedbackMessage()
-        setGameButton()
+        bindViewModel()
     }
-    
+    func bindViewModel() {
+        guard  let viewModel = viewModel else {
+            return
+        }
+        viewModel.state.bindAndCall { (state) in
+            self.gameButton.backgroundColor = state.getButtonColor()
+            self.gameButton.setTitle(state.getButtonText(), for: .normal)
+        }
+        viewModel.finalScore.bind { (score) in
+            self.displayAlertWithScore(score: score)
+        }
+        viewModel.randomValue.bind { (generated) in
+            self.rollScoreLabel.text = "\(generated)"
+        }
+        viewModel.feedBackMessage.bindAndCall { (message) in
+            self.feedbackLabel.text = message
+        }
+        viewModel.frameNumber.bind { (position) in
+            self.framesCollectionView.reloadData()
+            self.scrollToFrame(index: position-1)
+        }
+        viewModel.animation.bindAndCall { (animation) in
+            self.playAnimationWithName(name: animation)
+        }
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animationView.play()
     }
+    
     @IBAction func playBtnClicked(_ sender: Any) {
-        if currentGame == nil {
-            createNewGame()
-        }else if currentGame!.isFinished() {
-            calculateScore()
-        }else{
-            playNewRoll()
-        }
+        viewModel?.didClickOnPlayBtn()
     }
     
     
@@ -80,79 +90,22 @@ class ViewController: UIViewController{
             self.animationView.isHidden = true
         }
     }
-    private func createNewGame() {
-        currentGame = BowlingGame()
-        playNewRoll()
-    }
-    private func playNewRoll(){
-        var generated = generateRandom(lower: 0, heigher: 10)
-        if let lastFrame = currentGame?.allFrames().last, !lastFrame.isCompleted() {
-            let neededScore = lastFrame.getNeededScore()
-            generated = generateRandom(lower: 0, heigher: neededScore)
-            
-        }
-        currentGame?.play(pins: generated)
-        rollScoreLabel.text = "\(generated)"
-        setFeedbackMessage()
+
+
+    private func scrollToFrame(index:Int){
         framesCollectionView.reloadData()
-        if let count = currentGame?.allFrames().count {
-            framesCollectionView.scrollToItem(at: IndexPath(item:  count-1, section: 0), at: .left, animated: true)
-        }
-        setGameButton()
+        let indexPath = IndexPath(item:  index, section: 0)
+        framesCollectionView.scrollToItem(at:indexPath , at: .left, animated: true)
     }
-    private func calculateScore(){
-        let alert = UIAlertController(title: "alert_title".localize(), message: String(format: "alert_message".localize(),currentGame?.getScore() ?? 0), preferredStyle: .alert)
+    private func displayAlertWithScore(score:Int){
+        let alertMessage = String(format: "alert_message".localize(),score)
+        let alertTitle = "alert_title".localize()
+        let alert = UIAlertController(title:alertTitle , message: alertMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "new_game_btn_alert".localize(), style: .default, handler: { _ in
-            self.createNewGame()
+            self.viewModel?.didClickOnNewGame()
         }))
         alert.addAction(UIAlertAction(title: "cance_btn_alert".localize(), style: .cancel, handler: nil))
         self.present(alert, animated: true)
-    }
-    
-    private func setGameButton() {
-        gameButton.backgroundColor = gamestate.getButtonColor()
-        gameButton.setTitle(gamestate.getButtonText(), for: .normal)
-    }
-    
-    private func setFeedbackMessage() {
-        if currentGame?.isNewGame() ??  true {
-            feedbackLabel.text = "start_game_feedback_message".localize()
-            return
-        }
-        if let currentFrame = currentGame?.allFrames().last {
-            if  currentFrame.hasStrike() {
-                feedbackLabel.text = "strike_feedback_message".localize()
-                playAnimationWithName(name: "confetti")
-                return
-            }
-            if  currentFrame.hasSpare() {
-                feedbackLabel.text = "spare_feedback_message".localize()
-                playAnimationWithName(name: "spare")
-                return
-            }
-            if !currentFrame.isCompleted(){
-                let neededScore = currentFrame.getNeededScore()
-                if neededScore == 10  {
-                    feedbackLabel.text = "zero_feedback_message".localize()
-                    playAnimationWithName(name: "sad")
-                }else{
-                    feedbackLabel.text = String(format:"next_roll_feedback_message".localize(),neededScore)
-                    playAnimationWithName(name: "next")
-                }
-                return
-            }else {
-                if currentFrame.getSecondRoll()?.getKnockedPins() == 0{
-                    feedbackLabel.text = "zero_feedback_message".localize()
-                    playAnimationWithName(name: "sad")
-                }else{
-                    feedbackLabel.text = "next_frame_feedback_message".localize()
-                    playAnimationWithName(name: "next")
-                }
-            }
-        }
-    }
-    private func generateRandom(lower:Int, heigher:Int) -> Int{
-        return Int.random(in: lower...heigher)
     }
     
     private func setupViews(){
@@ -175,13 +128,13 @@ class ViewController: UIViewController{
 extension  ViewController: UICollectionViewDelegate,UICollectionViewDataSource  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return currentGame?.allFrames().count ?? 0
+        return viewModel?.currentGame?.allFrames().count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let frameCell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameFrameCollectionViewCell", for: indexPath) as? GameFrameCollectionViewCell {
             frameCell.index = indexPath
-            frameCell.item = currentGame?.allFrames()[indexPath.item]
+            frameCell.item = viewModel?.currentGame?.allFrames()[indexPath.item]
             return frameCell
         }
         return UICollectionViewCell()
