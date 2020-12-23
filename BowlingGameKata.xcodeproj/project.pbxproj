@@ -35,6 +35,9 @@
 		044CB9D9256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */; };
 		044CB9DA256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */; };
 		045DB33425700E07006DB41D /* sad.json in Resources */ = {isa = PBXBuildFile; fileRef = 045DB33325700E07006DB41D /* sad.json */; };
+		046C29BC2593BAEF00CDEBDE /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C29BB2593BAEF00CDEBDE /* GameState.swift */; };
+		046C29C22593BECE00CDEBDE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C29C12593BECE00CDEBDE /* String.swift */; };
+		046C29C82593BFB600CDEBDE /* BowlingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C29C72593BFB600CDEBDE /* BowlingGameViewModel.swift */; };
 		04928BF82570077900C734D1 /* next.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BF72570077800C734D1 /* next.json */; };
 		04928BFA2570078100C734D1 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BF92570078100C734D1 /* confetti.json */; };
 		04928BFC25700B8700C734D1 /* spare.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BFB25700B8700C734D1 /* spare.json */; };
@@ -85,6 +88,9 @@
 		044CB9D3256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFrameCollectionViewCell.swift; sourceTree = "<group>"; };
 		044CB9D4256EEDCE0076ADF9 /* GameFrameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameFrameCollectionViewCell.xib; sourceTree = "<group>"; };
 		045DB33325700E07006DB41D /* sad.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sad.json; sourceTree = "<group>"; };
+		046C29BB2593BAEF00CDEBDE /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		046C29C12593BECE00CDEBDE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		046C29C72593BFB600CDEBDE /* BowlingGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameViewModel.swift; sourceTree = "<group>"; };
 		04928BF72570077800C734D1 /* next.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = next.json; sourceTree = "<group>"; };
 		04928BF92570078100C734D1 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		04928BFB25700B8700C734D1 /* spare.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spare.json; sourceTree = "<group>"; };
@@ -188,6 +194,9 @@
 		044CB98E256D0C9B0076ADF9 /* BowlingGameKata */ = {
 			isa = PBXGroup;
 			children = (
+				046C29C62593BF9600CDEBDE /* ViewModels */,
+				046C29C02593BEB300CDEBDE /* Extensions */,
+				046C29BA2593BAD800CDEBDE /* DTO */,
 				04928BF62570076A00C734D1 /* Resources */,
 				04122833256FF769007D8129 /* Views */,
 				04122832256FF758007D8129 /* Models */,
@@ -221,6 +230,30 @@
 				044CB9B3256D0C9E0076ADF9 /* Info.plist */,
 			);
 			path = BowlingGameKataUITests;
+			sourceTree = "<group>";
+		};
+		046C29BA2593BAD800CDEBDE /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				046C29BB2593BAEF00CDEBDE /* GameState.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		046C29C02593BEB300CDEBDE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				046C29C12593BECE00CDEBDE /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		046C29C62593BF9600CDEBDE /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				046C29C72593BFB600CDEBDE /* BowlingGameViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		04928BF62570076A00C734D1 /* Resources */ = {
@@ -505,10 +538,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				044CB9C8256D11F30076ADF9 /* GameFrame.swift in Sources */,
+				046C29C82593BFB600CDEBDE /* BowlingGameViewModel.swift in Sources */,
 				044CB9C4256D0FCE0076ADF9 /* BowlingGame.swift in Sources */,
 				044CB994256D0C9B0076ADF9 /* ViewController.swift in Sources */,
+				046C29C22593BECE00CDEBDE /* String.swift in Sources */,
 				044CB9D5256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift in Sources */,
 				044CB990256D0C9B0076ADF9 /* AppDelegate.swift in Sources */,
+				046C29BC2593BAEF00CDEBDE /* GameState.swift in Sources */,
 				044CB9CE256D18ED0076ADF9 /* GameRoll.swift in Sources */,
 				044CB992256D0C9B0076ADF9 /* SceneDelegate.swift in Sources */,
 			);

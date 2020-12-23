@@ -16,6 +16,14 @@ class ViewController: UIViewController{
     @IBOutlet weak var framesCollectionView: UICollectionView!
     
     var currentGame:BowlingGame?
+    var gamestate: GameState {
+        get{
+            if currentGame == nil {
+                return .newGame
+            }
+            return currentGame!.isFinished() ? .finished : .inProgress
+        }
+    }
 
     let animationView = AnimationView()
     
@@ -57,8 +65,7 @@ class ViewController: UIViewController{
         animationView.animationSpeed = 1
         
         view.addSubview(animationView)
-        animationView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0
-        ).isActive = true
+        animationView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
         animationView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         animationView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
@@ -100,21 +107,11 @@ class ViewController: UIViewController{
         }))
         alert.addAction(UIAlertAction(title: "cance_btn_alert".localize(), style: .cancel, handler: nil))
         self.present(alert, animated: true)
-        
     }
     
     private func setGameButton() {
-        if currentGame == nil {
-            gameButton.backgroundColor = UIColor(named: "blueColor")
-            gameButton.setTitle("start_new_game_btn".localize(), for: .normal)
-        }else if currentGame!.isFinished() {
-            
-            gameButton.backgroundColor = UIColor(named: "pinkColor")
-            gameButton.setTitle("calculate_score_btn".localize(), for: .normal)
-        }else{
-            gameButton.backgroundColor = UIColor(named: "greenColor")
-            gameButton.setTitle("roll_btn".localize(), for: .normal)
-        }
+        gameButton.backgroundColor = gamestate.getButtonColor()
+        gameButton.setTitle(gamestate.getButtonText(), for: .normal)
     }
     
     private func setFeedbackMessage() {
@@ -194,13 +191,5 @@ extension  ViewController: UICollectionViewDelegate,UICollectionViewDataSource  
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)
-    }
-}
-
-
-extension String{
-    
-    func localize() -> String{
-        return NSLocalizedString(self,comment: "")
     }
 }
