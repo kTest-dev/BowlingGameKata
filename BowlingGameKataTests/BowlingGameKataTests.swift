@@ -12,8 +12,8 @@ import XCTest
 class BowlingGameKataTests: XCTestCase {
 
     func testAllRollsAreStrikesScore() {
-        let rolls = [10,10,10,10,10,10,10,10,10,10,10,10]
-        
+        let rolls = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+
         let game = BowlingGame()
         for roll in rolls {
             game.play(pins: roll)
@@ -21,8 +21,8 @@ class BowlingGameKataTests: XCTestCase {
         XCTAssertEqual(game.getScore(), 300, "When all rolls are Strikes we expect to have a score of 300")
     }
     func testAllFramesAreSparesScore() {
-        let rolls = [5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5]
-        
+        let rolls = [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+
         let game = BowlingGame()
         for roll in rolls {
             game.play(pins: roll)

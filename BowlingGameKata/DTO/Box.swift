@@ -13,23 +13,23 @@ import Foundation
 
 class Box<T> {
     typealias CallBack = (T) -> Void
-    
+
     var callBack: CallBack?
-    var value: T{
-        didSet{
+    var value: T {
+        didSet {
             callBack?(value)
         }
     }
-    
-    init(_ new: T){
+
+    init(_ new: T) {
         value = new
     }
     func bind(_ callBack: CallBack?) {
         self.callBack = callBack
     }
-    func bindAndCall(_ callBack: CallBack?){
+    func bindAndCall(_ callBack: CallBack?) {
         self.callBack = callBack
         callBack?(value)
     }
- 
+
 }

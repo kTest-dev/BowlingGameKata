@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 enum GameState {
-    
+
     case newGame
     case finished
     case inProgress
-    
+
     func getButtonColor() -> UIColor? {
-        switch self  {
+        switch self {
         case .newGame:
             return  UIColor(named: "blueColor")
         case .finished:
@@ -25,7 +25,7 @@ enum GameState {
             return UIColor(named: "greenColor")
         }
     }
-    
+
     func getButtonText() -> String? {
         switch self {
         case .newGame:
@@ -36,5 +36,15 @@ enum GameState {
            return  "roll_btn".localize()
         }
     }
-    
+    func getFeedbackMessage() -> String?{
+        switch self {
+        case .newGame:
+            return  "start_game_feedback_message".localize()
+        case .finished:
+            return "finish_game_feedback_message".localize()
+        case .inProgress:
+           return nil
+        }
+    }
+
 }

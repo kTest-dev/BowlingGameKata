@@ -39,6 +39,7 @@
 		046C29C22593BECE00CDEBDE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C29C12593BECE00CDEBDE /* String.swift */; };
 		046C29C82593BFB600CDEBDE /* BowlingGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C29C72593BFB600CDEBDE /* BowlingGameViewModel.swift */; };
 		046C29D02593C1FA00CDEBDE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C29CF2593C1FA00CDEBDE /* Box.swift */; };
+		046C29D52594A3CD00CDEBDE /* RollState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C29D42594A3CD00CDEBDE /* RollState.swift */; };
 		04928BF82570077900C734D1 /* next.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BF72570077800C734D1 /* next.json */; };
 		04928BFA2570078100C734D1 /* confetti.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BF92570078100C734D1 /* confetti.json */; };
 		04928BFC25700B8700C734D1 /* spare.json in Resources */ = {isa = PBXBuildFile; fileRef = 04928BFB25700B8700C734D1 /* spare.json */; };
@@ -93,6 +94,7 @@
 		046C29C12593BECE00CDEBDE /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		046C29C72593BFB600CDEBDE /* BowlingGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowlingGameViewModel.swift; sourceTree = "<group>"; };
 		046C29CF2593C1FA00CDEBDE /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		046C29D42594A3CD00CDEBDE /* RollState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollState.swift; sourceTree = "<group>"; };
 		04928BF72570077800C734D1 /* next.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = next.json; sourceTree = "<group>"; };
 		04928BF92570078100C734D1 /* confetti.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = confetti.json; sourceTree = "<group>"; };
 		04928BFB25700B8700C734D1 /* spare.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = spare.json; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			children = (
 				046C29BB2593BAEF00CDEBDE /* GameState.swift */,
 				046C29CF2593C1FA00CDEBDE /* Box.swift */,
+				046C29D42594A3CD00CDEBDE /* RollState.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				046C29C82593BFB600CDEBDE /* BowlingGameViewModel.swift in Sources */,
 				044CB9C4256D0FCE0076ADF9 /* BowlingGame.swift in Sources */,
 				044CB994256D0C9B0076ADF9 /* ViewController.swift in Sources */,
+				046C29D52594A3CD00CDEBDE /* RollState.swift in Sources */,
 				046C29C22593BECE00CDEBDE /* String.swift in Sources */,
 				046C29D02593C1FA00CDEBDE /* Box.swift in Sources */,
 				044CB9D5256EEDCE0076ADF9 /* GameFrameCollectionViewCell.swift in Sources */,

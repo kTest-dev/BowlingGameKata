@@ -8,19 +8,18 @@
 
 import Foundation
 
-
 class GameRoll {
-    private var nbKnockedPins:Int
-    
-    init(knockedPins:Int) {
+    private var nbKnockedPins: Int
+
+    init(knockedPins: Int) {
         nbKnockedPins = knockedPins
     }
-    
+
     func isStrike() -> Bool {
         return nbKnockedPins == 10
     }
-    
-    func getKnockedPins() -> Int{
+
+    func getKnockedPins() -> Int {
         return nbKnockedPins
     }
 }

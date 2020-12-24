@@ -5,6 +5,8 @@
   Created by Macbook Pro 2017 on 11/26/20.
   Copyright © 2020 DevTest. All rights reserved.
 */
+
+"finish_game_feedback_message" = "Let's see what you did during this game 🤔";
 "start_game_feedback_message" = "Let's start the game 🎳";
 "strike_feedback_message" = "Awesome 🎉 You got a strike";
 "zero_feedback_message" = "Opps 😒 Better luck next roll";

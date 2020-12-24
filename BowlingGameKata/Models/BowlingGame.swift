@@ -9,42 +9,42 @@
 import Foundation
 
 class BowlingGame {
-    
+
     private var frames: [GameFrame] = [GameFrame()]
-    
-    func play(pins:Int) {
+
+    func play(pins: Int) {
         do {
             let currentRoll = GameRoll(knockedPins: pins)
             if let frame = frames.last, !frame.isCompleted() {
                 try frame.addRoll(roll: currentRoll)
-            }else{
+            } else {
                 let newFrame = GameFrame()
                 try newFrame.addRoll(roll: currentRoll)
                 frames.append(newFrame)
             }
-        }catch {
+        } catch {
             fatalError("A frame should have at most two rolls")
         }
     }
-    
+
     func allFrames() -> [GameFrame] {
         return frames
     }
-    
+
     func getScore() -> Int {
         var score = 0
-        for (_,frame) in  frames.enumerated(){
+        for (_, frame) in  frames.enumerated() {
             score += frame.getFrameScore() + frame.getFrameBonus(allFrames: frames)
         }
         return score
     }
-    func isNewGame() -> Bool{
+    func isNewGame() -> Bool {
         if let first = frames.first {
             return first.getFirstRoll() == nil
         }
         return allFrames().isEmpty
     }
-    func isFinished() -> Bool{
+    func isFinished() -> Bool {
         if frames.count == 10 {
             if let lastFrame = frames.last {
                 return  !lastFrame.hasStrike()
@@ -53,5 +53,3 @@ class BowlingGame {
         return frames.count >= 10
     }
 }
-
-

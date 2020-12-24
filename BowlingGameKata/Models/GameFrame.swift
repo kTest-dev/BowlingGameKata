@@ -8,52 +8,51 @@
 
 import Foundation
 
-
 class GameFrame {
-    private var rolls:[GameRoll] = []
+    private var rolls: [GameRoll] = []
     private let lastFrameIndex = 9
-    let id:String = UUID().uuidString
-    
-    func addRoll(roll:GameRoll) throws  {
+    let id: String = UUID().uuidString
+
+    func addRoll(roll: GameRoll) throws {
         guard !isCompleted() else {
             throw GameFrameErrors.FrameCompleted
         }
         rolls.append(roll)
     }
-    func numberOfPlayedRolls() -> Int{
+    func numberOfPlayedRolls() -> Int {
         return rolls.count
     }
-    func isCompleted() -> Bool{
+    func isCompleted() -> Bool {
         return hasStrike() || (rolls.count == 2)
     }
-    
+
     func hasStrike() -> Bool {
         return rolls.first?.isStrike() ?? false
     }
-    func hasSpare() -> Bool{
+    func hasSpare() -> Bool {
         if hasStrike() {
             return false
         }
         return getFrameScore() == 10
     }
-    
+
     func getFrameScore() -> Int {
         return rolls.reduce(0) { (result, roll) -> Int in
                  return result + roll.getKnockedPins()
-            
+
         }
     }
-    
-    func getFirstRoll() -> GameRoll?{
+
+    func getFirstRoll() -> GameRoll? {
         return rolls.first
     }
-    func getSecondRoll() -> GameRoll?{
-        if rolls.count == 2{
+    func getSecondRoll() -> GameRoll? {
+        if rolls.count == 2 {
             return rolls[1]
         }
         return nil
     }
-    func getFrameBonus(allFrames:[GameFrame]) -> Int {
+    func getFrameBonus(allFrames: [GameFrame]) -> Int {
             if hasStrike() {
                 return strikeBonus(allFrames: allFrames)
             }
@@ -62,9 +61,9 @@ class GameFrame {
             }
           return 0
     }
-    
-    private func strikeBonus(allFrames:[GameFrame]) -> Int {
-        if let indexOf = allFrames.firstIndex(where: {$0.id == id}), indexOf < lastFrameIndex{
+
+    private func strikeBonus(allFrames: [GameFrame]) -> Int {
+        if let indexOf = allFrames.firstIndex(where: {$0.id == id}), indexOf < lastFrameIndex {
             let nextFrame  =  allFrames[indexOf+1]
             if nextFrame.hasStrike() {
                 return nextFrame.getFrameScore() + allFrames[indexOf+2].getFrameScore()
@@ -73,8 +72,8 @@ class GameFrame {
         }
         return 0
     }
-    
-    private func spareBonus(allFrames:[GameFrame]) -> Int {
+
+    private func spareBonus(allFrames: [GameFrame]) -> Int {
         if let indexOf = allFrames.firstIndex(where: {$0.id == id}), indexOf < lastFrameIndex {
             let nextFrame  =  allFrames[indexOf+1]
             if let roll = nextFrame.getFirstRoll() {
@@ -83,7 +82,7 @@ class GameFrame {
         }
         return 0
     }
-    
+
     func getNeededScore() -> Int {
         if hasStrike() {
             return 0
