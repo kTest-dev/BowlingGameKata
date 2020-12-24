@@ -14,7 +14,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var gameButton: UIButton!
     @IBOutlet weak var rollScoreLabel: UILabel!
     @IBOutlet weak var framesCollectionView: UICollectionView!
-
+    
     
     let animationView = AnimationView()
     
@@ -90,8 +90,8 @@ class ViewController: UIViewController{
             self.animationView.isHidden = true
         }
     }
-
-
+    
+    
     private func scrollToFrame(index:Int){
         framesCollectionView.reloadData()
         let indexPath = IndexPath(item:  index, section: 0)

@@ -27,8 +27,6 @@ class BowlingGameViewModel {
         self.animation = Box<String>("conffeti")
     }
     
-    
-    
     func didClickOnPlayBtn(){
         switch state.value {
         case .newGame:
@@ -56,25 +54,33 @@ class BowlingGameViewModel {
     }
     
     private func playNewRoll(){
-        var generated = generateRandom(lower: 0, heigher: 10)
+        randomValue.value = generateRandom(lower: 0, heigher: 10)
         if let lastFrame = currentGame?.allFrames().last {
             if !lastFrame.isCompleted() {
-                generated = generateRandom(lower: 0, heigher:  lastFrame.getNeededScore())
+                randomValue.value = generateRandom(lower: 0, heigher:  lastFrame.getNeededScore())
             }
         }
-        currentGame?.play(pins: generated)
+        currentGame?.play(pins:  randomValue.value)
         frameNumber.value = currentGame?.allFrames().count ?? 0
-        setFeedBack()
+        updateGameState()
     }
-    
+    private func updateGameState(){
+        if currentGame?.isNewGame() ?? true{
+            state.value = .newGame
+            feedBackMessage.value = "start_game_feedback_message".localize()
+            return
+        }else if !currentGame!.isFinished() {
+            state.value = .inProgress
+            setFeedBack()
+        }else {
+            state.value = .finished
+        }
+    }
     private func calculateFinalScore(){
         self.finalScore.value = currentGame?.getScore() ?? 0
     }
     private func setFeedBack() {
-        if currentGame?.isNewGame() ??  true {
-            feedBackMessage.value = "start_game_feedback_message".localize()
-            return
-        }
+     
         if let currentFrame = currentGame?.allFrames().last {
             if  currentFrame.hasStrike() {
                 feedBackMessage.value = "strike_feedback_message".localize()

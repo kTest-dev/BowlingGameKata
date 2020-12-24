@@ -16,11 +16,11 @@ class BowlingGame {
         do {
             let currentRoll = GameRoll(knockedPins: pins)
             if let frame = frames.last, !frame.isCompleted() {
-               try frame.addRoll(roll: currentRoll)
+                try frame.addRoll(roll: currentRoll)
             }else{
-               let newFrame = GameFrame()
-               try newFrame.addRoll(roll: currentRoll)
-                   frames.append(newFrame)
+                let newFrame = GameFrame()
+                try newFrame.addRoll(roll: currentRoll)
+                frames.append(newFrame)
             }
         }catch {
             fatalError("A frame should have at most two rolls")
@@ -31,7 +31,7 @@ class BowlingGame {
         return frames
     }
     
-   func getScore() -> Int {
+    func getScore() -> Int {
         var score = 0
         for (_,frame) in  frames.enumerated(){
             score += frame.getFrameScore() + frame.getFrameBonus(allFrames: frames)
